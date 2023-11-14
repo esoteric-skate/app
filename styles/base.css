@@ -1,0 +1,414 @@
+/*=======================================
+This Is All Of The Setup And Base CSS
+Do Not Write NEW Css Here Use "style.css"
+New CSS In "style.css" Can Overwrite This
+=======================================*/
+
+/* Imports Two Fonts */
+@import url(https://cdn.jsdelivr.net/npm/firacode@6.2.0/distr/fira_code.css);
+
+@font-face {
+	font-family: "VanBerger";
+	src: url("../assets/fonts/VanBerger.otf");
+	font-display: swap;
+}
+
+:root {
+	/* Set Up Color Variables */
+	--bg: #222222;
+	--fg: #EEEEEE;
+	--accent: #BA90EE;
+
+	background-color: var(--bg);
+	color: var(--fg);
+}
+
+body {
+	font-family: Helvetica, Helvetica, Arial, sans-serif;
+	margin: 0;
+	padding: 0;
+}
+
+.content {
+	z-index: -1;
+	opacity: 0;
+	animation: fadeIn 1.5s ease 0.2s forwards;
+	max-width: 1366px;
+	padding: 0 5vw;
+	margin: auto;
+	padding-bottom: 2.5em;
+}
+
+.content p {
+	font-size: clamp(1.25rem, -1.2rem + 4vw, 1.75rem);
+}
+
+.header {
+	z-index: 3 !important;
+	width: 100%;
+	overflow: hidden;
+	border-bottom: 1px solid var(--fg);
+	background-color: var(--bg);
+}
+
+.header>* {
+	align-content: center;
+	color: var(--fg);
+	font-weight: bold;
+	text-decoration: none;
+	text-align: center;
+	float: right;
+	padding: 0.85em;
+	display: block;
+}
+
+span.purple {
+	color: var(--accent);
+}
+
+.menuLogo {
+	float: left;
+	font-family: 'VanBerger';
+	font-size: 1.015em;
+}
+
+.menuLogo:hover>* {
+	color: var(--bg);
+}
+
+.header a:hover {
+	background-color: var(--fg);
+	color: var(--bg);
+}
+
+.logo {
+	margin: 5vh auto;
+	width: min(80vh, 90vw);
+	max-width: 1000px;
+	object-fit: scale-down;
+}
+
+.centered {
+	display: grid;
+	place-content: center;
+	text-align: center;
+}
+
+.greeting {
+	font-size: clamp(3rem, -1.2rem + 16vw, 7rem);
+	margin: auto 1em;
+}
+
+.brandname {
+	font-family: 'Fira Code', monospace;
+	text-shadow: 0 0 10px var(--accent);
+}
+
+.footer {
+	z-index: 3;
+	border-top: 1px solid var(--fg);
+	height: min-content;
+	margin: 0;
+	width: 100%;
+	text-align: center;
+	position: fixed;
+	bottom: 0;
+	background-color: var(--bg);
+}
+
+.form {
+	border: 2px solid var(--fg);
+	font-size: clamp(1rem, -0.2rem + 2vw, 1rem);
+	box-shadow: 0 0 10px var(--accent);
+	width: fit-content;
+	padding: 1em;
+	margin: 1em auto 1.5em auto;
+}
+
+.form>* {
+	margin: 1em;
+}
+
+.form button {
+	animation: boxOut 0.2s linear 0s 1 forwards;
+	border-radius: 0;
+	padding: 1em 3em;
+	background-color: var(--bg);
+	border: 2px solid var(--fg);
+	color: var(--fg);
+	text-align: center;
+	margin: auto;
+}
+
+.form input {
+	border: none;
+	box-shadow: none;
+	border-radius: 0;
+	padding: 1em;
+	margin-bottom: 0.5em;
+	background-color: var(--bg);
+	border-bottom: 1px solid var(--fg);
+	color: var(--fg);
+	font-size: clamp(1rem, -0.2rem + 2vw, 1rem);
+}
+
+.form label {
+	display: inline-block;
+	width: 150px;
+	text-align: left;
+}
+
+.form input:focus {
+	animation: boxIn 0.2s linear 0s 1 forwards;
+	box-shadow: 0 0 0px var(--accent);
+	border-bottom: 1px solid var(--fg);
+	outline: none;
+}
+
+.form button:hover {
+	animation: boxIn 0.2s linear 0s 1 forwards;
+}
+
+.dollarSign {
+	font-family: 'VanBerger';
+	color: var(--accent);
+}
+
+.pageTitle {
+	font-size: clamp(2.5rem, -0.6rem + 8vw, 3.5rem);
+	text-align: center;
+	padding-top: 5%;
+	font-family: 'Fira Code', monospace;
+	text-shadow: 0 0 10px var(--accent);
+}
+
+.container {
+	display: grid;
+	align-items: center;
+	justify-content: center;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	gap: 2.5vw;
+	margin: 1vw 0 5vw 0;
+	padding: 5%;
+}
+
+.item {
+	animation: boxOut 0.1s linear 0s 1 forwards, shrink 0.1s ease 0s 1 forwards;
+	border-radius: 6px;
+	font-size: 2em;
+	border: 2px solid var(--fg);
+	margin: 3%;
+	display: block;
+}
+
+a.item {
+	text-decoration: none;
+	color: var(--fg);
+}
+
+.item:hover {
+	animation: boxIn 0.1s linear 0s 1 forwards, grow 0.1s ease 0s 1 forwards;
+}
+
+.imgContainer {
+	box-shadow: inset 0 0 10px var(--accent);
+	display: grid;
+	justify-items: center;
+	align-items: center;
+	margin: auto;
+	border-radius: 0;
+	border-bottom: solid var(--fg) 2px;
+}
+
+.item img {
+	max-width: 100%;
+	height: max(20vw, 30vh);
+	object-fit: scale-down;
+}
+
+.item hr {
+	opacity: 0;
+	transition: opacity 0.5s;
+	animation: 0.5s shrinkLine;
+	margin: 0 auto;
+	padding: 0;
+	color: var(--accent);
+	max-width: 0;
+}
+
+.item:hover hr {
+	opacity: 1;
+	margin: 0 auto;
+	animation: 0.5s growLine forwards;
+	color: var(--accent);
+}
+
+.item p:nth-child(2) {
+	border-bottom: 2px sloid var(--accent);
+}
+
+.item p {
+	padding: 0 1%;
+	margin: 4%;
+	text-align: center;
+	font-size: min(1em, 5vw);
+}
+
+.contact {
+	font-size: clamp(1.75rem, -0.3rem + 4vw, 1.75rem);
+	color: var(--fg);
+	text-shadow: 1px 1px 0px #0000FF;
+}
+
+.contact:hover {
+	text-shadow: 1px 1px 0px var(--accent);
+}
+
+.productContainer {
+	margin-top: 3em;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+#productImg img {
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+	object-fit: scale-down;
+	max-width: min(90%, 50vh);
+}
+
+.material-symbols-outlined {
+	font-variation-settings:
+		'FILL' 0,
+		'wght' 400,
+		'GRAD' 0,
+		'opsz' 24
+}
+
+.header svg {
+	display: none;
+	padding: 0.84em;
+	color: var(--fg)
+}
+
+.prodDivider {
+	max-width: 0;
+	animation: growLineFull 1s 0.5s forwards;
+	margin-left: 0;
+	color: var(--accent);
+}
+
+.infoText {
+	color: var(--accent);
+	cursor: pointer;
+	font-size: medium !important;
+}
+
+.error {
+	color: red;
+	font-size: medium !important;
+}
+
+@media screen and (max-width: 555px) {
+	.header {
+		position: absolute !important;
+		top: 0;
+	}
+
+	.content {
+		padding-top: 4em;
+	}
+
+
+	.header svg {
+		float: right;
+		display: block;
+	}
+
+	.header a:not(:first-child) {
+		display: none;
+	}
+
+	.header.open a,
+	.header.open svg {
+		display: block;
+		float: left;
+		padding: 0.75em 0;
+		width: 100%;
+	}
+}
+
+/* Fades In The Content Of The Page (Sans Menu & Footer) */
+@keyframes growLine {
+	to {
+		max-width: 80%;
+	}
+}
+
+@keyframes growLineFull {
+	to {
+		max-width: 100%;
+	}
+}
+
+@keyframes shrinkLine {
+	from {
+		max-width: 80%;
+	}
+
+	to {
+		max-width: 0%;
+	}
+}
+
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+
+	to {
+		opacity: 1;
+	}
+}
+
+@keyframes boxIn {
+	from {
+		box-shadow: 0 0 0px var(--accent);
+	}
+
+	to {
+		box-shadow: 0 0 15px var(--accent);
+	}
+}
+
+@keyframes boxOut {
+	from {
+		box-shadow: 0 0 15px var(--accent);
+	}
+
+	to {
+		box-shadow: 0 0 0px var(--accent);
+	}
+}
+
+@keyframes shrink {
+	from {
+		transform: scale(1.015);
+	}
+
+	to {
+		transform: scale(1.0);
+	}
+}
+
+@keyframes grow {
+	from {
+		transform: scale(1.0);
+	}
+
+	to {
+		transform: scale(1.015);
+	}
+}
