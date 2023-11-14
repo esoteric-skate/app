@@ -12,3 +12,7 @@ The app is based on the code from [the site](https://github.com/esoteric-skate/s
 
 ## Note
 Logins are fake there is no DB all credentials are non-persistant. Be smart, don't enter any real credentials into this site (passwords do get hashed though).
+
+<p align="center">
+  <img alt="Phone Running App" src="https://i.imgur.com/GvgAoXS.png" />
+</p>
