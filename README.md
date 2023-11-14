@@ -7,8 +7,6 @@ The app is based on the code from [the site](https://github.com/esoteric-skate/s
 
 ## Structure
 - `assests/` includes all assets for the site, namely fonts and images, and icons
-- `includes/` utilities
-- `pages/` all of the actual content for the diffrent pages
 - `scripts/` js files for the project
 - `styles/` houses css for the site
 
